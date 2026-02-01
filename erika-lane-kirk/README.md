@@ -25,6 +25,19 @@ This profile documents the public statements, claims, and narratives of Erika La
 |----------|------|---------------|
 | Mother | Lori Frantzve | Lori Ann Frantzve, Lorin A. Frantzve, Lori A. Walstad, Lori Ann Guinta, Lori W. Frantzve, Lori Ann Frantzue, Lori A. Srantve, Lori A. Frantze, Lori W. Frantze, Lori Frantzue |
 | Father | Kent Frantzve | — |
+| Spouse | Charlie Kirk | Founder of Turning Point USA (married May 8, 2021; deceased September 10, 2025) |
+
+### Relationship Timeline
+
+| Date | Event |
+|------|-------|
+| September 5, 2018 | First date with Charlie Kirk at Bill's Burgers, NYC |
+| December 2020 | Engaged to Charlie Kirk |
+| May 8, 2021 | Married Charlie Kirk in Scottsdale, Arizona |
+| August 2022 | Daughter born |
+| May 2024 | Son born |
+| September 10, 2025 | Charlie Kirk fatally shot at Utah Valley University |
+| September 18, 2025 | Named CEO and Chair of Turning Point USA |
 
 ---
 
@@ -52,6 +65,7 @@ This profile exists to:
 | Date | Event ID | Title | Type | Status |
 |------|----------|-------|------|--------|
 | 1988-11-20 | `1988-11-20-birth` | Birth of Erika Lane Frantzve | document | draft |
+| 2018-09-05 | `2018-09-05-first-date-charlie-kirk` | First Date with Charlie Kirk in NYC | social-media | final |
 
 ---
 
