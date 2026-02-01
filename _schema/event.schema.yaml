@@ -1,0 +1,521 @@
+# =============================================================================
+# ContinuityChronicles Event Schema
+# =============================================================================
+# This file documents the YAML schema for event.yaml files.
+# All events must conform to this schema to ensure consistency.
+#
+# ContinuityChronicles is an investigative timeline platform for documenting
+# and fact-checking narratives that contain contradictions, inconsistencies,
+# or disputed claims. This schema supports tracking multiple versions of
+# stories, comparing claims vs. records, and highlighting inconsistencies.
+#
+# Location: /profiles/{profile-slug}/events/{event-id}/event.yaml
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# SCHEMA DEFINITION
+# -----------------------------------------------------------------------------
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://continuitychronicles.com/schemas/event.schema.yaml"
+title: "ContinuityChronicles Event Schema"
+description: "Schema for event.yaml files in the ContinuityChronicles project"
+type: object
+
+# -----------------------------------------------------------------------------
+# REQUIRED FIELDS
+# -----------------------------------------------------------------------------
+required:
+  - id
+  - date
+  - title
+  - summary
+  - status
+
+# -----------------------------------------------------------------------------
+# PROPERTIES
+# -----------------------------------------------------------------------------
+properties:
+  # ---------------------------------------------------------------------------
+  # id (REQUIRED)
+  # ---------------------------------------------------------------------------
+  # Unique identifier for the event. Must match the folder name.
+  # Format: YYYY-MM-DD-kebab-case-descriptive-slug
+  #
+  # Examples:
+  #   - "2024-03-15-server-outage"
+  #   - "2023-11-01-product-launch"
+  #   - "2026-01-31-example-event"
+  # ---------------------------------------------------------------------------
+  id:
+    type: string
+    pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(-[a-z0-9]+)*$"
+    description: "Unique event identifier matching the folder name"
+    examples:
+      - "2024-03-15-server-outage"
+      - "2023-11-01-product-launch"
+
+  # ---------------------------------------------------------------------------
+  # date (REQUIRED)
+  # ---------------------------------------------------------------------------
+  # The primary date of the event in ISO-8601 format.
+  # This is when the EVENT occurred (or when a CLAIM was made).
+  # For multi-day events, this is the START date.
+  # ---------------------------------------------------------------------------
+  date:
+    type: string
+    format: date
+    pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    description: "Event date in YYYY-MM-DD format (when event occurred or claim was made)"
+    examples:
+      - "2024-03-15"
+      - "2023-11-01"
+
+  # ---------------------------------------------------------------------------
+  # end_date (OPTIONAL)
+  # ---------------------------------------------------------------------------
+  # For events spanning multiple days, the end date.
+  # Must be the same as or after the `date` field.
+  # Set to null or omit for single-day events.
+  # ---------------------------------------------------------------------------
+  end_date:
+    type: ["string", "null"]
+    format: date
+    pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    description: "End date for multi-day events (YYYY-MM-DD)"
+    default: null
+    examples:
+      - "2024-03-17"
+      - null
+
+  # ---------------------------------------------------------------------------
+  # title (REQUIRED)
+  # ---------------------------------------------------------------------------
+  # Human-readable title for the event.
+  # Should be concise but descriptive.
+  # Max recommended length: 100 characters
+  # ---------------------------------------------------------------------------
+  title:
+    type: string
+    minLength: 1
+    maxLength: 200
+    description: "Human-readable event title"
+    examples:
+      - "Production Database Outage"
+      - "New Feature Launch: Timeline View"
+
+  # ---------------------------------------------------------------------------
+  # summary (REQUIRED)
+  # ---------------------------------------------------------------------------
+  # One-paragraph summary for timeline cards and previews.
+  # Should capture the essence of the event quickly.
+  # Max recommended length: 300 characters
+  # ---------------------------------------------------------------------------
+  summary:
+    type: string
+    minLength: 1
+    maxLength: 500
+    description: "Brief summary for timeline cards"
+    examples:
+      - "Primary database cluster experienced 2-hour outage affecting all users."
+
+  # ---------------------------------------------------------------------------
+  # details (OPTIONAL)
+  # ---------------------------------------------------------------------------
+  # Longer free-form description.
+  # Supports markdown formatting.
+  # Use YAML multiline syntax (|) for readability.
+  # ---------------------------------------------------------------------------
+  details:
+    type: ["string", "null"]
+    description: "Extended description with markdown support"
+    default: null
+    examples:
+      - |
+        ## Background
+
+        The incident began at 14:32 UTC when monitoring systems detected...
+
+        ## Impact
+
+        Approximately 50,000 users were affected during the outage window.
+
+  # ---------------------------------------------------------------------------
+  # tags (OPTIONAL)
+  # ---------------------------------------------------------------------------
+  # Array of lowercase tags for categorization and filtering.
+  # Use kebab-case for multi-word tags.
+  #
+  # Recommended tags for investigative timelines:
+  #   Source Type: statement, interview, document, social-media, legal-filing
+  #   Analysis: contradiction, inconsistency, version-change, retraction
+  #   Evidence: screenshot, archived, video, audio, receipts
+  #   Verification: verified, unverified, disputed, debunked
+  #   Severity: minor-inconsistency, major-contradiction, pattern
+  # ---------------------------------------------------------------------------
+  tags:
+    type: array
+    items:
+      type: string
+      pattern: "^[a-z0-9]+(-[a-z0-9]+)*$"
+    uniqueItems: true
+    default: []
+    description: "Categorization tags (lowercase, kebab-case)"
+    examples:
+      - ["statement", "contradiction", "verified"]
+      - ["social-media", "screenshot", "archived"]
+      - ["interview", "version-change", "major-contradiction"]
+
+  # ---------------------------------------------------------------------------
+  # people (OPTIONAL)
+  # ---------------------------------------------------------------------------
+  # Array of people involved in or mentioned in the event.
+  # For investigative timelines, this typically includes:
+  #   - The subject being documented
+  #   - People mentioned in their claims
+  #   - Witnesses or third parties who contradict/corroborate
+  # Can use real names, handles, or pseudonyms (document conventions in /_schema/)
+  # ---------------------------------------------------------------------------
+  people:
+    type: array
+    items:
+      type: string
+    default: []
+    description: "People involved in or mentioned in the event"
+    examples:
+      - ["@subjecthandle", "@witness1"]
+      - ["Subject Name", "Interviewer Name"]
+
+  # ---------------------------------------------------------------------------
+  # systems (OPTIONAL)
+  # ---------------------------------------------------------------------------
+  # Array of platforms, services, or contexts where the event occurred.
+  # For investigative timelines, this typically includes:
+  #   - Social media platforms (Twitter, Instagram, TikTok)
+  #   - Media outlets (CNN, podcast names, YouTube channels)
+  #   - Legal/official contexts (court, SEC, etc.)
+  # ---------------------------------------------------------------------------
+  systems:
+    type: array
+    items:
+      type: string
+    default: []
+    description: "Platforms, services, or contexts where the event occurred"
+    examples:
+      - ["Twitter", "Instagram"]
+      - ["CNN Interview", "Joe Rogan Podcast"]
+      - ["Superior Court", "SEC Filing"]
+
+  # ---------------------------------------------------------------------------
+  # location (OPTIONAL)
+  # ---------------------------------------------------------------------------
+  # Physical or logical location relevant to the event.
+  # ---------------------------------------------------------------------------
+  location:
+    type: ["string", "null"]
+    default: null
+    description: "Location where the event occurred"
+    examples:
+      - "US-East Data Center"
+      - "San Francisco Office"
+      - "Virtual/Remote"
+
+  # ---------------------------------------------------------------------------
+  # links (OPTIONAL)
+  # ---------------------------------------------------------------------------
+  # Array of related external links with labels.
+  # ---------------------------------------------------------------------------
+  links:
+    type: array
+    items:
+      type: object
+      required:
+        - label
+        - url
+      properties:
+        label:
+          type: string
+          description: "Display text for the link"
+        url:
+          type: string
+          format: uri
+          description: "URL (must be valid URI)"
+    default: []
+    description: "Related external links"
+    examples:
+      - label: "Post-Mortem Report"
+        url: "https://example.com/reports/2024-03-15"
+      - label: "News Article"
+        url: "https://news.example.com/article/123"
+
+  # ---------------------------------------------------------------------------
+  # images (OPTIONAL)
+  # ---------------------------------------------------------------------------
+  # Array of images with relative paths and optional captions.
+  # Paths are relative to the event folder.
+  # ---------------------------------------------------------------------------
+  images:
+    type: array
+    items:
+      type: object
+      required:
+        - path
+      properties:
+        path:
+          type: string
+          description: "Relative path from event folder (typically assets/filename)"
+        caption:
+          type: ["string", "null"]
+          description: "Optional image caption"
+          default: null
+    default: []
+    description: "Related images and screenshots"
+    examples:
+      - path: "assets/dashboard-screenshot.png"
+        caption: "Dashboard showing the spike in errors"
+      - path: "assets/architecture-diagram.png"
+        caption: null
+
+  # ---------------------------------------------------------------------------
+  # severity (OPTIONAL)
+  # ---------------------------------------------------------------------------
+  # Significance of the contradiction or inconsistency.
+  # Can use text (low/medium/high) or numeric (1-5) scale.
+  #
+  # Guidelines:
+  #   low/1-2: Minor inconsistency, could be memory error or misspeak
+  #   medium/3: Notable contradiction worth documenting
+  #   high/4-5: Major contradiction, pattern of deception, or significant lie
+  #
+  # Document your convention in the profile's README.
+  # ---------------------------------------------------------------------------
+  severity:
+    type: ["string", "integer", "null"]
+    enum: [null, "low", "medium", "high", 1, 2, 3, 4, 5]
+    default: null
+    description: "Significance of contradiction or inconsistency"
+    examples:
+      - "high"
+      - 3
+      - null
+
+  # ---------------------------------------------------------------------------
+  # status (REQUIRED)
+  # ---------------------------------------------------------------------------
+  # Publication status of the event documentation.
+  #
+  # Values:
+  #   - draft:    Work in progress, may be incomplete
+  #   - final:    Complete and verified
+  #   - archived: Historical, may be outdated
+  # ---------------------------------------------------------------------------
+  status:
+    type: string
+    enum: ["draft", "final", "archived"]
+    description: "Publication status"
+    examples:
+      - "final"
+      - "draft"
+
+  # -----------------------------------------------------------------------------
+  # INVESTIGATION-SPECIFIC FIELDS (OPTIONAL)
+  # -----------------------------------------------------------------------------
+  # These fields support the investigative nature of ContinuityChronicles.
+
+  # ---------------------------------------------------------------------------
+  # claim_date (OPTIONAL)
+  # ---------------------------------------------------------------------------
+  # When a claim was made (if different from the event date).
+  # Use this when documenting a statement ABOUT a past event.
+  # Example: In 2024, subject claims something happened in 2010.
+  #   - date: "2024-03-15" (when claim was made)
+  #   - claim_date: "2010-06-01" (when subject says event occurred)
+  # ---------------------------------------------------------------------------
+  claim_date:
+    type: ["string", "null"]
+    format: date
+    pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    default: null
+    description: "Date the subject claims an event occurred (if different from date)"
+    examples:
+      - "2010-06-01"
+      - null
+
+  # ---------------------------------------------------------------------------
+  # source_type (OPTIONAL)
+  # ---------------------------------------------------------------------------
+  # Primary type of source for this event.
+  # ---------------------------------------------------------------------------
+  source_type:
+    type: ["string", "null"]
+    enum:
+      [
+        null,
+        "statement",
+        "interview",
+        "document",
+        "social-media",
+        "legal",
+        "financial",
+        "third-party",
+        "archive",
+      ]
+    default: null
+    description: "Primary source type for this event"
+    examples:
+      - "interview"
+      - "social-media"
+      - "legal"
+
+  # ---------------------------------------------------------------------------
+  # contradicts (OPTIONAL)
+  # ---------------------------------------------------------------------------
+  # Array of event IDs that this event contradicts.
+  # Creates explicit links between conflicting accounts.
+  # ---------------------------------------------------------------------------
+  contradicts:
+    type: array
+    items:
+      type: string
+    default: []
+    description: "Event IDs that this event contradicts"
+    examples:
+      - ["2023-05-15-podcast-interview", "2024-01-10-twitter-statement"]
+
+  # ---------------------------------------------------------------------------
+  # version (OPTIONAL)
+  # ---------------------------------------------------------------------------
+  # Version number if the subject has told multiple versions of this story.
+  # Helps track how a narrative evolves over time.
+  # ---------------------------------------------------------------------------
+  version:
+    type: ["integer", "null"]
+    minimum: 1
+    default: null
+    description: "Version number if story has been told multiple times"
+    examples:
+      - 1
+      - 2
+      - 3
+
+  # ---------------------------------------------------------------------------
+  # verification_status (OPTIONAL)
+  # ---------------------------------------------------------------------------
+  # Current verification status of claims in this event.
+  # ---------------------------------------------------------------------------
+  verification_status:
+    type: ["string", "null"]
+    enum:
+      [null, "verified", "unverified", "disputed", "debunked", "partially-true"]
+    default: null
+    description: "Verification status of claims in this event"
+    examples:
+      - "verified"
+      - "debunked"
+
+  # ---------------------------------------------------------------------------
+  # archived_urls (OPTIONAL)
+  # ---------------------------------------------------------------------------
+  # Archive.org or archive.today URLs for preserving sources.
+  # ---------------------------------------------------------------------------
+  archived_urls:
+    type: array
+    items:
+      type: object
+      required:
+        - original
+        - archive
+      properties:
+        original:
+          type: string
+          format: uri
+          description: "Original URL"
+        archive:
+          type: string
+          format: uri
+          description: "Archived URL (archive.org, archive.today, etc.)"
+        archived_date:
+          type: ["string", "null"]
+          format: date
+          description: "Date the archive was captured"
+    default: []
+    description: "Archived versions of source URLs"
+    examples:
+      - original: "https://twitter.com/user/status/123"
+        archive: "https://archive.today/AbCdE"
+        archived_date: "2024-03-15"
+
+# -----------------------------------------------------------------------------
+# ADDITIONAL PROPERTIES
+# -----------------------------------------------------------------------------
+# Allow additional properties for profile-specific extensions.
+# Document any custom properties in your profile's _schema folder.
+# -----------------------------------------------------------------------------
+additionalProperties: true
+
+# -----------------------------------------------------------------------------
+# EXAMPLE COMPLETE EVENT (Investigative Timeline)
+# -----------------------------------------------------------------------------
+# Below is a complete example event.yaml file for an investigative timeline:
+#
+# id: "2024-03-15-podcast-education-claim"
+# date: "2024-03-15"
+# end_date: null
+# title: "Subject Claims Harvard MBA on Podcast Interview"
+# summary: "During podcast appearance, subject claimed to have earned an MBA from Harvard Business School in 2012."
+# details: |
+#   ## Context
+#
+#   Subject appeared on "Business Leaders Podcast" Episode 142, hosted by
+#   John Smith. The interview focused on their entrepreneurial journey.
+#
+#   ## The Claim
+#
+#   At timestamp 23:45, subject stated: "After I finished my MBA at Harvard
+#   in 2012, I knew I wanted to start my own company."
+#
+#   ## Why This Matters
+#
+#   This claim contradicts:
+#   - Previous statements claiming graduation in 2010
+#   - LinkedIn profile showing no Harvard attendance
+#   - Harvard's public records showing no degree awarded
+#
+# tags:
+#   - "interview"
+#   - "statement"
+#   - "education-claim"
+#   - "contradiction"
+#   - "major-contradiction"
+# people:
+#   - "Subject Name"
+#   - "John Smith (Interviewer)"
+# systems:
+#   - "Business Leaders Podcast"
+#   - "Spotify"
+#   - "YouTube"
+# location: null
+# links:
+#   - label: "Podcast Episode (Spotify)"
+#     url: "https://open.spotify.com/episode/abc123"
+#   - label: "YouTube Upload"
+#     url: "https://youtube.com/watch?v=xyz789"
+# images:
+#   - path: "assets/screenshot-timestamp-23-45.png"
+#     caption: "Screenshot at 23:45 showing the education claim"
+# severity: "high"
+# status: "final"
+#
+# # Investigation-specific fields
+# claim_date: "2012-05-15"
+# source_type: "interview"
+# contradicts:
+#   - "2022-08-10-linkedin-profile"
+#   - "2023-01-05-twitter-bio-claim"
+# version: 3
+# verification_status: "debunked"
+# archived_urls:
+#   - original: "https://youtube.com/watch?v=xyz789"
+#     archive: "https://archive.org/web/20240315/https://youtube.com/watch?v=xyz789"
+#     archived_date: "2024-03-16"
+# -----------------------------------------------------------------------------

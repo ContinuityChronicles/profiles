@@ -1,0 +1,82 @@
+id: "2026-01-31-example-event"
+date: "2026-01-31"
+end_date: null
+title: "Example Event Title"
+summary: "This is a demonstration event showing how to document a statement or claim in an investigative timeline. Use this as a template for real events."
+
+details: |
+  ## Context
+
+  This example event demonstrates the proper format for documenting events in
+  a ContinuityChronicles investigative timeline. In a real event, this section
+  would contain detailed context about what was said, where, and when.
+
+  ## What Was Said
+
+  At timestamp 15:32 in the interview, the subject stated: "[Exact quote would
+  go here, with full context preserved.]"
+
+  ## Why This Matters
+
+  This event is significant because:
+  - It contradicts a previous statement made on [date]
+  - It introduces a new version of a previously documented story
+  - It can be cross-referenced with official records
+
+  ## Evidence Preservation
+
+  - Original source has been archived at archive.org
+  - Screenshots captured on 2026-01-31
+  - Full video downloaded and stored in assets/
+
+tags:
+  - "statement"
+  - "interview"
+  - "example"
+  - "contradiction"
+  - "operations"
+  - "security"
+
+people:
+  - "Subject Name"
+  - "Interviewer Name"
+
+systems:
+  - "Podcast Name"
+  - "YouTube"
+  - "Spotify"
+
+location: null
+
+links:
+  - label: "Original Source"
+    url: "https://example.com/original-source"
+  - label: "Archive.org Backup"
+    url: "https://web.archive.org/web/20260131/https://example.com/original-source"
+  - label: "Related Documentation"
+    url: "https://example.com/related-doc"
+
+images:
+  - path: "assets/screenshot-source-timestamp.png"
+    caption: "Screenshot of the statement at timestamp 15:32"
+  - path: "assets/screenshot-context.png"
+    caption: "Additional context from the same interview"
+
+severity: "medium"
+status: "final"
+
+# Investigation-specific fields
+claim_date: null
+source_type: "interview"
+contradicts:
+  - "2025-06-15-previous-statement"
+  - "2024-11-20-social-media-claim"
+version: 2
+verification_status: "disputed"
+archived_urls:
+  - original: "https://example.com/original-source"
+    archive: "https://web.archive.org/web/20260131/https://example.com/original-source"
+    archived_date: "2026-01-31"
+  - original: "https://youtube.com/watch?v=example123"
+    archive: "https://archive.today/AbCdE"
+    archived_date: "2026-01-31"
