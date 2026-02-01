@@ -78,6 +78,7 @@ This profile exists to:
 | 2011-11-20 | `2011-11-20-miss-arizona-usa-win` | Wins Miss Arizona USA 2012 on Her 23rd Birthday | interview | final |
 | 2018-09-05 | `2018-09-05-first-date-charlie-kirk` | First Date with Charlie Kirk in NYC | social-media | final |
 | 2025-09-10 | `2025-09-10-charlie-kirk-killed` | Husband Charlie Kirk Fatally Shot at Utah Valley University | document | final |
+| 2025-09-18 | `2025-09-18-named-tpusa-ceo` | Named CEO and Chair of Turning Point USA | document | final |
 
 ---
 

@@ -1,0 +1,86 @@
+id: "2025-09-18-named-tpusa-ceo"
+date: "2025-09-18"
+end_date: null
+title: "Named CEO and Chair of Turning Point USA"
+summary: "Eight days after her husband Charlie Kirk was fatally shot, Erika Kirk was named CEO and Chair of the Board of Turning Point USA, succeeding her late husband as leader of the conservative youth activist organization he founded."
+
+details: |
+  ## Context
+
+  Following the murder of Charlie Kirk on September 10, 2025, Turning Point USA
+  announced on September 18, 2025, that his widow Erika Kirk would succeed him
+  as the organization's new CEO and Chair of the Board.
+
+  ## The Announcement
+
+  Turning Point USA announced Erika Kirk's appointment just eight days after
+  Charlie Kirk's death at Utah Valley University. She vowed to continue her
+  late husband's work with the organization.
+
+  ## Erika Kirk's Qualifications
+
+  At the time of her appointment, Erika Kirk had:
+
+  - Been a frequent presence at TPUSA events alongside her husband
+  - Educational background in Political Science (Arizona State University)
+  - Juris Master's degree from Liberty University (2017)
+  - Doctorate in Christian Leadership from Liberty University (2022)
+  - Experience as founder of nonprofit Everyday Heroes Like You
+  - Experience as founder of PROCLAIM Streetwear
+  - Experience as host of "Midweek Rise Up" podcast
+
+  ## About Turning Point USA
+
+  Turning Point USA is a conservative youth activist organization founded by
+  Charlie Kirk. The organization focuses on engaging students on college
+  campuses around conservative political issues.
+
+  ## Timeline Context
+
+  - **September 10, 2025:** Charlie Kirk killed at Utah Valley University
+  - **September 11, 2025:** Suspect apprehended
+  - **September 18, 2025:** Erika Kirk named CEO and Chair of TPUSA
+  - **September 21, 2025:** Charlie Kirk memorial service
+  - **October 14, 2025:** Erika accepts Presidential Medal of Freedom for Charlie
+
+tags:
+  - "turning-point-usa"
+  - "leadership"
+  - "career"
+  - "biographical"
+  - "verified"
+  - "charlie-kirk"
+
+people:
+  - "Erika Kirk"
+  - "Charlie Kirk"
+
+systems:
+  - "Turning Point USA"
+
+location: null
+
+links:
+  - label: "ABC News - Charlie Kirk's family"
+    url: "https://abcnews.go.com/News/charlie-kirk-wife-erika-two-kids/story?id=125460687"
+  - label: "Reuters - Erika Kirk named CEO (blocked/paywall)"
+    url: "https://www.reuters.com/world/us/erika-kirk-named-ceo-turning-point-usa-after-husbands-murder-2025-09-18/"
+
+images: []
+
+severity: null
+status: "final"
+
+# Investigation-specific fields
+claim_date: null
+source_type: "document"
+contradicts: []
+version: 1
+verification_status: "verified"
+archived_urls:
+  - original: "https://abcnews.go.com/News/charlie-kirk-wife-erika-two-kids/story?id=125460687"
+    archive: null
+    archived_date: null
+  - original: "https://www.reuters.com/world/us/erika-kirk-named-ceo-turning-point-usa-after-husbands-murder-2025-09-18/"
+    archive: null
+    archived_date: null
