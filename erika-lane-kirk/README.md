@@ -26,7 +26,7 @@ This profile documents the public statements, claims, and narratives of Erika La
 |----------|------|---------------|
 | Mother | Lori Frantzve | Lori Ann Frantzve, Lorin A. Frantzve, Lori A. Walstad, Lori Ann Guinta, Lori W. Frantzve, Lori Ann Frantzue, Lori A. Srantve, Lori A. Frantze, Lori W. Frantze, Lori Frantzue |
 | Father | Kent Frantzve | — |
-| Spouse | Charlie Kirk | Founder of Turning Point USA (married May 8, 2021; deceased September 10, 2025) |
+| Spouse | Charlie Kirk | Founder of Turning Point USA (married May 8, 2021; killed September 10, 2025 at Utah Valley University) |
 
 ### Relationship Timeline
 
@@ -43,8 +43,11 @@ This profile documents the public statements, claims, and narratives of Erika La
 | May 8, 2021 | Married Charlie Kirk in Scottsdale, Arizona |
 | August 2022 | Daughter born |
 | May 2024 | Son born |
-| September 10, 2025 | Charlie Kirk fatally shot at Utah Valley University |
+| September 10, 2025 | Charlie Kirk fatally shot at Utah Valley University ([FBI confirmed](https://www.fbi.gov/news/press-releases/utah-valley-shooting-updates)) |
+| September 11, 2025 | Suspect Tyler Robinson (22) apprehended |
 | September 18, 2025 | Named CEO and Chair of Turning Point USA |
+| September 21, 2025 | Delivered remarks at Charlie's memorial service (State Farm Stadium, Arizona) |
+| October 14, 2025 | Accepted Presidential Medal of Freedom on Charlie's behalf |
 
 ---
 
@@ -74,6 +77,7 @@ This profile exists to:
 | 1988-11-20 | `1988-11-20-birth` | Birth of Erika Lane Frantzve | document | draft |
 | 2011-11-20 | `2011-11-20-miss-arizona-usa-win` | Wins Miss Arizona USA 2012 on Her 23rd Birthday | interview | final |
 | 2018-09-05 | `2018-09-05-first-date-charlie-kirk` | First Date with Charlie Kirk in NYC | social-media | final |
+| 2025-09-10 | `2025-09-10-charlie-kirk-killed` | Husband Charlie Kirk Fatally Shot at Utah Valley University | document | final |
 
 ---
 
