@@ -202,6 +202,7 @@ Detailed schema documentation is available in the `/_schema` folder:
 
 ## Related
 
+- **Profiles Repository**: https://github.com/ContinuityChronicles/profiles
 - **Frontend Application**: Private repository for the ContinuityChronicles web interface
 - **Documentation**: See `/_schema` for detailed schema and template documentation
 
