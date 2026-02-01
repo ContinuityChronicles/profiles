@@ -15,9 +15,10 @@ This profile documents the public statements, claims, and narratives of Erika La
 ## Subject Background
 
 **Full Name:** Erika Lane Kirk (née Frantzve)  
-**Also Known As:** Erika Frantzve, Erika Lane Frantzve  
+**Also Known As:** Erika Frantzve, Erika Lane Frantzve, Miss Arizona USA 2012  
 **Date of Birth:** November 20, 1988  
-**Location:** Ohio, United States  
+**Birthplace:** Ohio, United States  
+**Current Location:** Arizona, United States
 
 ### Family Background
 
@@ -31,6 +32,12 @@ This profile documents the public statements, claims, and narratives of Erika La
 
 | Date | Event |
 |------|-------|
+| 2006 | Founded Everyday Heroes Like You nonprofit |
+| 2008-2010 | Played basketball at Regis University, Denver |
+| 2011 | First runner-up at Miss Arizona USA 2011 |
+| November 20, 2011 | Won Miss Arizona USA 2012 (on her 23rd birthday) |
+| June 2012 | Competed at Miss USA 2012 (did not place) |
+| 2017 | Earned Juris Master's degree from Liberty University |
 | September 5, 2018 | First date with Charlie Kirk at Bill's Burgers, NYC |
 | December 2020 | Engaged to Charlie Kirk |
 | May 8, 2021 | Married Charlie Kirk in Scottsdale, Arizona |
@@ -65,6 +72,7 @@ This profile exists to:
 | Date | Event ID | Title | Type | Status |
 |------|----------|-------|------|--------|
 | 1988-11-20 | `1988-11-20-birth` | Birth of Erika Lane Frantzve | document | draft |
+| 2011-11-20 | `2011-11-20-miss-arizona-usa-win` | Wins Miss Arizona USA 2012 on Her 23rd Birthday | interview | final |
 | 2018-09-05 | `2018-09-05-first-date-charlie-kirk` | First Date with Charlie Kirk in NYC | social-media | final |
 
 ---
@@ -112,7 +120,7 @@ All events in this profile must include:
 |----------|------|
 | **Source Type** | `statement`, `interview`, `document`, `social-media`, `legal-filing` |
 | **Analysis** | `contradiction`, `version-change`, `pattern` |
-| **Topic** | `biographical`, `family`, `employment`, `legal` |
+| **Topic** | `biographical`, `family`, `employment`, `legal`, `pageant`, `relationship` |
 | **Status** | `verified`, `unverified`, `disputed` |
 
 ---
@@ -171,3 +179,29 @@ If you are the subject of this profile and believe any information is inaccurate
 ---
 
 *Last Updated: 2025-01-27*
+
+---
+
+## Biographical Notes
+
+### Education
+- Arizona State University — Political Science and International Relations
+- Regis University, Denver — Basketball (2 years)
+- Liberty University — Juris Master's degree (2017)
+- Liberty University — Doctorate in Christian Leadership (2022)
+
+### Pageant History
+- Miss Arizona USA 2011: First Runner-Up
+- Miss Arizona USA 2012: **Winner** (crowned November 20, 2011)
+- Miss USA 2012: Did not place
+
+### Athletics
+- Women's basketball, Regis University (Denver, Colorado)
+
+### Organizations Founded
+- Everyday Heroes Like You (nonprofit, 2006)
+- PROCLAIM Streetwear (faith-based clothing line)
+
+### Current Roles
+- CEO and Chair, Turning Point USA (as of September 18, 2025)
+- Host, "Midweek Rise Up" podcast
